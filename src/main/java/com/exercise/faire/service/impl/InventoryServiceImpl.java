@@ -8,7 +8,7 @@ package com.exercise.faire.service.impl;
 import com.exercise.faire.model.Inventory;
 import com.exercise.faire.model.Order;
 import com.exercise.faire.model.OrderItem;
-import com.exercise.faire.model.PageInventory;
+import com.exercise.faire.model.InventoryPage;
 import com.exercise.faire.model.Product;
 import com.exercise.faire.model.ProductOption;
 import com.exercise.faire.service.InventoryService;
@@ -60,9 +60,9 @@ public class InventoryServiceImpl implements InventoryService {
        
         final String queryUrl = baseUrl.concat("products/options/inventory-levels");
         
-        final PageInventory pageInventory = new PageInventory(inventories);
+        final InventoryPage pageInventory = new InventoryPage(inventories);
 
-        final HttpEntity<PageInventory> entity = new HttpEntity(pageInventory);       
+        final HttpEntity<InventoryPage> entity = new HttpEntity(pageInventory);       
 
         final ResponseEntity<Product> response = restTemplate.exchange(queryUrl, HttpMethod.PATCH, entity, Product.class);
         

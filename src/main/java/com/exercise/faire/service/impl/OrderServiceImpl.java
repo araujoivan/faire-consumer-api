@@ -139,7 +139,7 @@ public class OrderServiceImpl implements OrderService {
                     
                     final OrderItem backOrderItem = new OrderItem();
                     
-                    //TODO: Verify if it makes sense request just the needed quantity of items?
+                    //TODO: Verify if it makes sense requesting just the needed quantity of items?
                     backOrderItem.setQuantity(item.getQuantity() - option.getAvailable_quantity());
                     backOrderItem.setId(item.getId());
                     backOrderItem.setOrder_id(item.getOrder_id());
